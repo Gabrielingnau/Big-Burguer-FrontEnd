@@ -49,7 +49,7 @@
     },
     "import/resolver": {
       "node": {
-        "paths": ["src"],
+        "paths": ["src", "src/pages/App"],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }

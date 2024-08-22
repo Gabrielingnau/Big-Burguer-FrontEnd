@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# BigBurguer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 💻 Sobre:
 
-Currently, two official plugins are available:
+Site criado para um restaurant da minha cidade, com o objetivo de ajudar o dono com o controle das vendas onlines.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📝 Layout
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Começo
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Essas instruções permitirão que você obtenha uma cópia do projeto de trabalho em sua máquina local para fins de desenvolvimento e teste.
+
+### 🔧 Instalação
+
+Dentro do terminal VsCode, escreva o seguinte código
+
+```
+git init
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+git clone https://github.com/Gabrielingnau/Big-Burguer-FrontEnd
+```
+Em seguida, insira as dependências com
+
+```
+npm install
+```
+
+Depois é só rodar o projeto com
+
+```
+npm run dev
+```
+
+### 🚧 Executando o back-end (servidor)
+
+# Entre nesse link para saber as instruções de como baixar o back-end em sua maquina
+[BackEnd](https://github.com/Gabrielingnau/Big-Burguer-BackEnd)
+
+## 🛠️ Construído com
+
+* [React.js](https://react.dev/) - A biblioteca para interfaces de usuário
+* [Vite](https://vitejs.dev/) - Ferramenta para FrontEnd
+* [Typescript](https://www.typescriptlang.org/) - Sintaxe para tipos
+* [Tailwind](https://tailwindcss.com/) - CSS 
+
+---
+⌨️ com ❤️ por [Gabriel Lingnau](https://www.linkedin.com/in/gabriel-lingnau-3bb17b266/) 😊

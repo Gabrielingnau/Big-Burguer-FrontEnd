@@ -15,12 +15,6 @@ Site criado para um restaurant da minha cidade, com o objetivo de ajudar o dono 
 ### Pratos
 ![image](https://github.com/user-attachments/assets/33709fb6-6345-49f3-85ec-91d6662930e7)
 
-### Dashboard
-![image](https://github.com/user-attachments/assets/65682efb-f94e-435d-9b9e-e10b9b8c9bf2)
-
-### Pedidos
-![image](https://github.com/user-attachments/assets/308932a4-a54f-4f71-a0fb-ca069a1a2316)
-
 ## 🚀 Começo
 
 Essas instruções permitirão que você obtenha uma cópia do projeto de trabalho em sua máquina local para fins de desenvolvimento e teste.

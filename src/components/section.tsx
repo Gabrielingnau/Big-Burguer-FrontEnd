@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
+import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from './ui/carousel';
 
 interface SectionProps {
   section: string;

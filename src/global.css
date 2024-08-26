@@ -31,6 +31,27 @@
     --chart-5: 27 87% 67%;
   }
 
+  html {
+    @media (max-width: 1600px) {
+      font-size: 90%;
+    }
+    @media (max-width: 1450px) {
+      font-size: 80%;
+    }
+    @media (max-width: 1250px) {
+      font-size: 70%;
+    }
+    @media (max-width: 1050px) {
+      font-size: 60%;
+    }
+    @media (max-width: 880px) {
+      font-size: 50%;
+    }
+    @media (max-width: 740px) {
+      font-size: 40%;
+    }
+  }
+
   .dark {
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;

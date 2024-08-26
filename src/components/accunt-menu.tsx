@@ -16,7 +16,7 @@ export function AccountMenu() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline" className="flex select-none items-center gap-2">
           Big Burguer
-          <ChevronDown className="h-4 w-4" />
+          <ChevronDown className="h-[1rem] w-[1rem]" />
         </Button>
       </DropdownMenuTrigger>
 
@@ -27,11 +27,11 @@ export function AccountMenu() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Building className="mr-2 h-4 w-4" />
+          <Building className="mr-2 h-[1rem] w-[1rem]" />
           <span>Perfil da loja</span>
         </DropdownMenuItem>
         <DropdownMenuItem className="text-rose-500 dark:text-rose-400">
-          <LogOut className="mr-2 h-4 w-4" />
+          <LogOut className="mr-2 h-[1rem] w-[1rem]" />
           <span>Sair</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

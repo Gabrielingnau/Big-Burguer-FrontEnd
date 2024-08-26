@@ -1,21 +1,20 @@
-import { Plus, Search, X } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Sheet, SheetTrigger } from '@/components/ui/sheet';
-
-import { ModalSheet } from './plates-modal-sheet';
+import { ModalCreatePlates } from './plates-modal-create-plates';
 
 export function PlatesTableFilter() {
   return (
     <form className="flex items-center">
       <div className="flex flex-1 items-center gap-2">
         <span className="text-sm font-semibold">Filtros:</span>
-        <Input placeholder="Nome do prato" className="h-8 max-w-[320px]" />
-        <Input placeholder="Ingredientes" className="h-8 max-w-[320px]" />
+        <Input placeholder="Nome do prato" className="h-8 max-w-[20rem]" />
+        <Input placeholder="Ingredientes" className="h-8 max-w-[20rem]" />
         <Select defaultValue="all">
-          <SelectTrigger className="h-8 w-[180px]">
+          <SelectTrigger className="h-8 w-[11.25rem]">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -29,22 +28,20 @@ export function PlatesTableFilter() {
           </SelectContent>
         </Select>
         <Button variant="secondary" size="xs" type="submit">
-          <Search className="mr-2 h-4 w-4" />
+          <Search className="mr-2 h-[1rem] w-[1rem]" />
           Filtrar resultados
         </Button>
         <Button variant="outline" size="xs" type="button">
-          <X className="mr-2 h-4 w-4" />
+          <X className="mr-2 h-[1rem] w-[1rem]" />
           Remover filtros
         </Button>
       </div>
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button className='flex items-center w-[5%]'>
-            <Plus className="h-5 w-5" />
-          </Button>
-        </SheetTrigger>
-        <ModalSheet />
-      </Sheet>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button type="button">Novo prato</Button>
+        </DialogTrigger>
+        <ModalCreatePlates />
+      </Dialog>
     </form>
   );
 }

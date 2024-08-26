@@ -13,18 +13,18 @@ export function OrderTableRow() {
         <Dialog>
           <DialogTrigger asChild>
             <Button variant="outline" size="xs">
-              <Search className="h-3 w-3" />
+              <Search className="h-[0.75rem] w-[0.75rem]" />
               <span className="sr-only">Detalhes do pedido</span>
             </Button>
           </DialogTrigger>
-          <OrderDetails/>
+          <OrderDetails />
         </Dialog>
       </TableCell>
       <TableCell className="font-mono text-xs font-medium">821e78f7asdhdf128h</TableCell>
       <TableCell className="text-muted-foreground">há 15 minutos</TableCell>
       <TableCell>
         <div className="flex items-center gap-2">
-          <span className="h-2 w-2 rounded-full bg-slate-400" />
+          <span className="h-[0.5rem] w-[0.5rem] rounded-full bg-slate-400" />
           <span className="font-medium text-muted-foreground">Pendente</span>
         </div>
       </TableCell>
@@ -32,13 +32,13 @@ export function OrderTableRow() {
       <TableCell className="font-medium">R$ 149,90</TableCell>
       <TableCell>
         <Button variant="outline" size="xs">
-          <ArrowRight className="mr-2 h-3 w-3" />
+          <ArrowRight className="mr-2 h-[0.75rem] w-[0.75rem]" />
           Aprovar
         </Button>
       </TableCell>
       <TableCell>
         <Button variant="ghost" size="xs">
-          <X className="mr-2 h-3 w-3" />
+          <X className="mr-2 h-[0.75rem] w-[0.75rem]" />
           Cancelar
         </Button>
       </TableCell>

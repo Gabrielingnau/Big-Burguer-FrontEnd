@@ -16,7 +16,7 @@ export function OrderDetails() {
               <TableCell className="text-muted-foreground">Status</TableCell>
               <TableCell className="flex justify-end">
                 <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-slate-400" />
+                  <span className="h-[0.5rem] w-[0.5rem] rounded-full bg-slate-400" />
                   <span className="font-medium text-muted-foreground">Pendente</span>
                 </div>
               </TableCell>

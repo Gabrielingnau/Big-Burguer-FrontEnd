@@ -1,11 +1,11 @@
-import { Home, UtensilsCrossed, SquareMenu } from 'lucide-react';
+import { Home, SquareMenu, UtensilsCrossed } from 'lucide-react';
 import { PiHamburgerBold } from 'react-icons/pi';
 
 import { AccountMenu } from './accunt-menu';
 import { NavLink } from './nav-link';
 import { ThemeToggle } from './theme/theme-toggle';
-import { Separator } from './ui/separator';
 import { Button } from './ui/button';
+import { Separator } from './ui/separator';
 
 export function Header() {
   return (
@@ -17,15 +17,15 @@ export function Header() {
 
         <nav className="flex items-center space-x-4 lg:space-x-6">
           <NavLink to="/">
-            <Home className="h-4 w-4" />
+            <Home className="h-[1rem] w-[1rem]" />
             Início
           </NavLink>
           <NavLink to="/orders">
-            <UtensilsCrossed className="h-4 w-4" />
+            <UtensilsCrossed className="h-[1rem] w-[1rem]" />
             Pedidos
           </NavLink>
           <NavLink to="/plates">
-            <SquareMenu className="h-4 w-4" />
+            <SquareMenu className="h-[1rem] w-[1rem]" />
             Pratos
           </NavLink>
         </nav>

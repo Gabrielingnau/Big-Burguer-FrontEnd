@@ -28,10 +28,10 @@ export function Plates() {
         <Card className="flex flex-col items-center">
           <div className="flex w-full items-center justify-between p-4">
             <Button variant="outline">
-              <Pencil className="h-6 w-6" />
+              <Pencil className="h-[1.5rem] w-[1.5rem]" />
             </Button>
             <Button variant="outline">
-              <X className="h-6 w-6" />
+              <X className="h-[1.5rem] w-[1.5rem]" />
             </Button>
           </div>
           <img src={PromoBurguer} alt="Promoção do dia" className="h-[20vw] w-full rounded-sm object-cover" />
@@ -42,37 +42,37 @@ export function Plates() {
       <div className="flex flex-col items-center gap-8 pb-20">
         <Section section="Hamburgues">
           {Array.from({ length: 20 }).map((_, i) => {
-            return <CardProduct />;
+            return <CardProduct key={i} />;
           })}
         </Section>
 
         <Section section="Dog`s">
           {Array.from({ length: 20 }).map((_, i) => {
-            return <CardProduct />;
+            return <CardProduct key={i} />;
           })}
         </Section>
 
         <Section section="Porções">
           {Array.from({ length: 20 }).map((_, i) => {
-            return <CardProduct />;
+            return <CardProduct key={i} />;
           })}
         </Section>
 
         <Section section="Refrigerantes">
           {Array.from({ length: 20 }).map((_, i) => {
-            return <CardProduct />;
+            return <CardProduct key={i} />;
           })}
         </Section>
 
         <Section section="Bebidas">
           {Array.from({ length: 20 }).map((_, i) => {
-            return <CardProduct />;
+            return <CardProduct key={i} />;
           })}
         </Section>
 
         <Section section="Sucos">
           {Array.from({ length: 20 }).map((_, i) => {
-            return <CardProduct />;
+            return <CardProduct key={i} />;
           })}
         </Section>
       </div>

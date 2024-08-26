@@ -21,10 +21,10 @@ export function CardProduct({ data }: CardProductProps) {
         <CardHeader>
           <div className="flex flex-row items-center justify-between">
             <Button variant="outline">
-              <Pencil className="h-4 w-4" />
+              <Pencil className="h-[1rem] w-[1rem]" />
             </Button>
             <Button variant="outline">
-              <X className="h-4 w-4" />
+              <X className="h-[1rem] w-[1rem]" />
             </Button>
           </div>
         </CardHeader>
@@ -32,13 +32,13 @@ export function CardProduct({ data }: CardProductProps) {
           <img
             src={Hamburguer}
             alt="Nome do amburguer"
-            className="min-h-[200px] w-[100%] max-w-[300px] rounded-[6px] object-cover"
+            className="min-h-[12.5rem] w-[100%] rounded-[6px] object-cover"
           />
           <CardTitle>Big triplo x</CardTitle>
-          <CardDescription className="w-[80%] max-w-[300px] text-center">
+          <CardDescription className="w-[80%] max-w-[18.75rem] text-center">
             Um delicioso haburguer com tres carnes suculentas e moplo especial da casa
           </CardDescription>
-          <Button className="w-[60%] max-w-[250px]">Visualizar</Button>
+          <Button className="w-[60%] max-w-[15.625rem]">Visualizar</Button>
         </CardContent>
       </Card>
     </CarouselItem>

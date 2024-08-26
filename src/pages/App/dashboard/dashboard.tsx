@@ -6,6 +6,7 @@ import { MonthOrdersAmountCard } from './month-orders-amount-card';
 import { MonthRevenueCard } from './month-revenue-card';
 import { RevenueChart } from './revenue-chart';
 import { PopularProductsChart } from './popular-products-chart';
+import { removeStorageIngredient } from '@/lib/utils/asyncStorage/ingredientsStorage';
 
 export function Dashboard() {
   return (

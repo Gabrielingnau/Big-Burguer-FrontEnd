@@ -58,27 +58,27 @@ export function SignUp() {
 
           <form onSubmit={handleSubmit(handleSignUp)} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="restaurantName">Nome do estabelecimento</Label>
+              <Label htmlFor="restaurantName"><p className='text-sm'>Nome do estabelecimento</p></Label>
               <Input id="restaurantName" type="text" {...register('restaurantName')} />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="managerName">Seu nome</Label>
+              <Label htmlFor="managerName"><p className='text-sm'>Seu nome</p></Label>
               <Input id="managerName" type="text" {...register('managerName')} />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone">Seu telefone</Label>
+              <Label htmlFor="phone"><p className='text-sm'>Seu telefone</p></Label>
               <Input id="phone" type="tel" {...register('phone')} />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Seu e-mail</Label>
+              <Label htmlFor="email"><p className='text-sm'>Seu e-mail</p></Label>
               <Input id="email" type="email" {...register('email')} />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password">Sua senha</Label>
+              <Label htmlFor="password"><p className='text-sm'>Sua senha</p></Label>
               <Input id="password" type="password" {...register('password')} />
             </div>
 

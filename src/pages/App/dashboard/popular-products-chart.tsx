@@ -19,7 +19,7 @@ export function PopularProductsChart() {
     <Card className="col-span-3">
       <CardHeader className="pb-8">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-base font-medium">Produtos populares</CardTitle>
+          <CardTitle className="text-base font-medium">Pratos populares</CardTitle>
           <BarChart className="h-[1rem] w-[1rem] text-muted-foreground" />
         </div>
       </CardHeader>

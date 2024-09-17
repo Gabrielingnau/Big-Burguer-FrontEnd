@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { ModalCreatePlates } from './plates-modal-create-plates';
+import { ModalCreatePlates } from './ModalCreatePlates/modal';
 
 export function PlatesTableFilter() {
   return (

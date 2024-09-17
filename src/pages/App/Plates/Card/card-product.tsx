@@ -3,7 +3,10 @@ import { Pencil, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CarouselItem } from '@/components/ui/carousel';
+import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 
+import { ModalCreatePlates } from '../ModalCreatePlates/modal';
+import { CardModal } from './card-modal';
 import Hamburguer from '/Hamburguer.jpeg';
 
 interface CardProductProps {
@@ -20,12 +23,22 @@ export function CardProduct({ data }: CardProductProps) {
       <Card>
         <CardHeader>
           <div className="flex flex-row items-center justify-between">
-            <Button variant="outline">
-              <Pencil className="h-[1rem] w-[1rem]" />
-            </Button>
-            <Button variant="outline">
-              <X className="h-[1rem] w-[1rem]" />
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline">
+                  <Pencil className="h-[1rem] w-[1rem]" />
+                </Button>
+              </DialogTrigger>
+              <ModalCreatePlates />
+            </Dialog>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline">
+                  <X className="h-[1rem] w-[1rem]" />
+                </Button>
+              </DialogTrigger>
+              <CardModal />
+            </Dialog>
           </div>
         </CardHeader>
         <CardContent className="flex flex-col items-center gap-2">

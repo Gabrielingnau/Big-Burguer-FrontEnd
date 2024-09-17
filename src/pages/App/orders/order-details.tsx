@@ -9,7 +9,7 @@ export function OrderDetails() {
         <DialogDescription>Detalhes do pedido</DialogDescription>
       </DialogHeader>
 
-      <div className="space-y-6">
+      <div className="space-y-6 max-h-[70vh] overflow-y-auto">
         <Table>
           <TableBody>
             <TableRow>

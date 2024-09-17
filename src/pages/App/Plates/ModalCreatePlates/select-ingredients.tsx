@@ -63,7 +63,7 @@ export function SelectIngredients() {
 
   return (
     <button type="button" className="flex cursor-default flex-col space-y-3">
-      <form onSubmit={handleIngredients} className="flex items-center space-x-2">
+      <form onSubmit={handleIngredients} className="flex w-[26.938rem] items-center space-x-2">
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger className="w-[200px] justify-between" asChild>
             <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] justify-between">
@@ -81,7 +81,7 @@ export function SelectIngredients() {
                 <CommandGroup>
                   {ingredients &&
                     ingredients.map((ingredient) => (
-                      <CommandItem key={ingredient} className="mb-2 flex w-full items-center rounded-[6px]">
+                      <CommandItem key={ingredient} className="mb-2 flex w-full items-center rounded-[6px] p-0">
                         <CommandItem
                           onSelect={(currentValue) => {
                             setSelectIngredient(currentValue === selectIngredient ? '' : currentValue);
@@ -119,7 +119,7 @@ export function SelectIngredients() {
         />
 
         <Button onClick={handleIngredients} type="button">
-          <Plus />
+          <Plus className="h-5 w-5" />
         </Button>
       </form>
       {arrayIngredients && (
@@ -135,7 +135,7 @@ export function SelectIngredients() {
                   variant="ghost"
                   className="h-3 w-3 hover:bg-muted-foreground"
                 >
-                  <X className="h-3 w-3" />
+                  <X className="h-5 w-5" />
                 </Button>
               </div>
             );

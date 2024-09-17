@@ -48,12 +48,12 @@ export function SignIn() {
 
           <form onSubmit={handleSubmit(handleSignIn)} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Seu e-mail</Label>
+              <Label htmlFor="email"><p className='text-sm'>Seu e-mail</p></Label>
               <Input id="email" type="email" {...register('email')} />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password">Sua senha</Label>
+              <Label htmlFor="password"><p className='text-sm'>Sua senha</p></Label>
               <Input id="password" type="password" {...register('password')} />
             </div>
 

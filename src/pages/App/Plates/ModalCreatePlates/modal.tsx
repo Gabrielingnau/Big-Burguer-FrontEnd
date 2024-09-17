@@ -1,6 +1,3 @@
-import { Download, X } from 'lucide-react';
-import { useState } from 'react';
-import { FileWithPath, useDropzone } from 'react-dropzone';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
@@ -10,23 +7,23 @@ import { DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/c
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { errorColor } from '@/lib/utils/plates-error-color';
+import { errorColor } from '@/lib/utils/error-color';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { SelectIngredients } from './plates-select-ingredients';
+import { PreviewImage, filesError } from './preview-image';
+import { SelectIngredients } from './select-ingredients';
 
 const formSchema = z.object({
-  name: z.string().min(1, 'informe o nome do prato'),
-  description: z.string().min(1, 'informe uma descrição para o prato'),
+  name: z.string().min(1, 'Informe o nome do prato'),
+  description: z.string().min(1, 'Informe uma descrição para o prato'),
   select: z.enum(['hamburguers', 'dog`s', 'porções', 'refrigerantes', 'bebidas', 'sucos'], {
     required_error: 'Selecione uma categoria',
   }),
-  value: z.string().min(1, 'informe um valor para o prato'),
+  value: z.string().min(1, 'Informe um valor para o prato'),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
 
-let filesError: File[] | null | undefined = null;
 let errorImageColor: string = 'muted-foreground';
 
 export function ModalCreatePlates() {
@@ -54,24 +51,26 @@ export function ModalCreatePlates() {
       toast.success('Prato criado com sucesso');
       setValue('name', '');
     } catch (error) {
-      toast.error('Erro ao cadastrar restaurante');
+      toast.error('Erro ao criar o prato');
     }
   }
 
   return (
-    <DialogContent className="sm:max-w-[26.563rem]">
+    <DialogContent className="w-[30rem] p-6">
       <DialogHeader>
         <DialogTitle>Crie seu prato</DialogTitle>
         <DialogDescription>Preencha os campos obrigatórios para criar o prato.</DialogDescription>
       </DialogHeader>
-      <form onSubmit={handleSubmit(handleCreatePlates)} className="flex flex-col gap-5">
-        <PreviewImage />
+      <form onSubmit={handleSubmit(handleCreatePlates)} className="flex w-[26.938rem] flex-col gap-5">
+        <div className="h-[7.5rem] w-[7.5rem]">
+          <PreviewImage errorImageColor={errorImageColor} title="Imagem do produto" borderSize="border-[0.1rem]" />
+        </div>
 
         <div className="space-y-1">
           <Label className={`${errors.name?.message && `text-${errorColor}`}`} htmlFor="name">
             Nome do prato
           </Label>
-          <Input id="name" type="text" {...register('name')} />
+          <Input placeholder='Ex: Big Bacon' id="name" type="text" {...register('name')} />
           {errors.name?.message && <p className={`text-sm text-${errorColor}`}>{errors.name?.message}</p>}
         </div>
 
@@ -79,7 +78,7 @@ export function ModalCreatePlates() {
           <Label className={`${errors.description?.message && `text-${errorColor}`}`} htmlFor="description">
             Descrição
           </Label>
-          <Input id="description" type="text" {...register('description')} />
+          <Input placeholder='Descrava seu prato' id="description" type="text" {...register('description')} />
           {errors.description?.message && <p className={`text-sm text-${errorColor}`}>{errors.description?.message}</p>}
         </div>
 
@@ -92,7 +91,7 @@ export function ModalCreatePlates() {
           <Label className={`${errors.value?.message && `text-${errorColor}`}`} htmlFor="value">
             Valor
           </Label>
-          <Input id="value" type="number" {...register('value')} />
+          <Input placeholder='Ex: R$33,00' id="value" type="number" {...register('value')} />
           {errors.value?.message && <p className={`text-sm text-${errorColor}`}>{errors.value?.message}</p>}
         </div>
 
@@ -123,77 +122,9 @@ export function ModalCreatePlates() {
         />
 
         <Button disabled={isSubmitting} className="mt-4 w-full" type="submit">
-          Finalizar cadastro
+          Finalizar criação
         </Button>
       </form>
     </DialogContent>
   );
 }
-
-interface File extends FileWithPath {
-  preview: string;
-}
-
-const PreviewImage = () => {
-  const [files, setFiles] = useState<File[] | null>();
-
-  filesError = files;
-
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    accept: {
-      'image/*': [],
-    },
-    onDrop: (acceptedFiles) => {
-      setFiles(
-        acceptedFiles.map((file) =>
-          Object.assign(file, {
-            preview: URL.createObjectURL(file),
-          }),
-        ),
-      );
-    },
-  });
-
-  return (
-    <div {...getRootProps()} className="w-[7.5rem] items-center gap-4">
-      <Label
-        htmlFor="image"
-        tabIndex={0}
-        className={`flex h-[7.5rem] w-[7.5rem] cursor-pointer items-center justify-center rounded-[6px] bg-muted transition-all hover:opacity-70 ${!files && `border-2 border-dashed p-2 ${isDragActive ? `border-ring` : `border-${errorImageColor}`}`}`}
-      >
-        {files ? (
-          files?.map((file) => {
-            return (
-              <div key={file.name} className="relative">
-                <img
-                  key={file.path}
-                  src={file.preview}
-                  alt="Imagem do prato"
-                  className="h-[7.5rem] w-[7.5rem] rounded-[6px] object-cover"
-                />
-                <Button
-                  className="absolute right-0 top-0 z-10 h-6 w-6 rounded-[50%] p-0"
-                  size="xs"
-                  variant="outline"
-                  onClick={() => setFiles(null)}
-                >
-                  <X className="h-4 w-4" />
-                </Button>
-              </div>
-            );
-          })
-        ) : (
-          <p
-            className={`flex flex-col items-center justify-center gap-2 text-center ${errorImageColor === 'ring' && `text-${errorImageColor}`} text-xs ${isDragActive && `text-ring`}`}
-          >
-            <Download className={`mb-1 ${isDragActive && `color-ring`} h-5 w-5`} /> Imagem do produto
-            <p className={`${isDragActive ? `text-ring` : `text-${errorImageColor}`}`} opacity-70>
-              Arraste ou click
-            </p>
-          </p>
-        )}
-      </Label>
-      <Input className="hidden" {...getInputProps()} />
-    </div>
-  );
-};

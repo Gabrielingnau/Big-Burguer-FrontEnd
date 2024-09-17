@@ -50,6 +50,12 @@
     @media (max-width: 740px) {
       font-size: 40%;
     }
+    @media (max-width: 600px) {
+      font-size: 30%;
+    }
+    @media (max-width: 450px) {
+      font-size: 20%;
+    }
   }
 
   .dark {
